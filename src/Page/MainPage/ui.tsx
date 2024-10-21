@@ -11,7 +11,7 @@ import { Stack, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
 export const MainPage = () => {
-  const INDENT = 5;
+  const INDENT = 10;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [ctx, setctx] = useState<CanvasRenderingContext2D | null>(null);
   const [dataError, setDataError] = useState<string>("");
@@ -52,7 +52,8 @@ export const MainPage = () => {
             rect1,
             rect2,
             connectionPoint1,
-            connectionPoint2
+            connectionPoint2,
+            INDENT
           );
           if (ctx && canvasRef.current) {
             renderCanvas(

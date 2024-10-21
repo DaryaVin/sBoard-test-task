@@ -1,4 +1,4 @@
-import { ConnectionPoint, Point, Rect, Segment, getPointRect } from "@/Shared";
+import { ConnectionPoint, Point, Rect, getPointRect } from "@/Shared";
 
 export const findConnectionPointByAngle = (
   angle: ConnectionPoint["angle"],
@@ -8,7 +8,7 @@ export const findConnectionPointByAngle = (
     position: { x, y },
   } = rect;
   const { bottomLeftPointOfRect, topRightPointOfRect } = getPointRect(rect);
-  const angleInRadian = (angle * Math.PI) / 180.0;
+  const angleInRadian = ((angle - 90) * Math.PI) / 180.0;
 
   // уравнение луча, который выходит из центра прямоугольника под заданным углом:
   // x(t) = x0 + t * cos(θ)
